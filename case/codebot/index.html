@@ -60,7 +60,7 @@
     </div>
     <section><h3>Problem</h3><p>Coding agents run on a workstation, but steering them from a phone should not require opening a laptop.</p></section>
     <section><h3>Approach</h3><p>A dependency-free Java 21 Telegram bot (63 classes, ~10.9k LOC, plain javac — no Maven/Gradle) bridging to a local coding-agent server over JSON-RPC/WebSocket: live turn states, approvals, session switch/import/archive, attachments, urgent steering; shared mode where each Telegram user pairs their own machine.</p></section>
-    <section><h3>Evidence</h3><div class="gallery"><figure class="shot frame-img"><img src="../../assets/media/full/codebot-build.jpg" alt="Codebot" loading="lazy"><figcaption>Codebot</figcaption></figure></div></section>
+    <section><h3>Evidence</h3><div class="gallery"><figure class="shot frame-img"><img src="../../assets/media/full/codebot-build.jpg" alt="Codebot"><figcaption>Codebot</figcaption></figure></div></section>
     <section><h3>Stack</h3><div class="chips"><span class="chip">Java 21 (без build-системы)</span><span class="chip">Telegram Bot API (long polling + webhook)</span><span class="chip">JSON-RPC поверх WebSocket</span><span class="chip">Docker Compose + Playwright-sidecar для браузерных инструментов. *(Исходники локальные</span><span class="chip">здесь описана архитектура.)*</span></div></section>
     
     <p style="margin-top:18px;font-size:14px;letter-spacing:.05em;text-transform:uppercase;color:var(--accent)">Source: README.ru.md § Codebot</p>

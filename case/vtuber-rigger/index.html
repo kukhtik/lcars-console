@@ -60,7 +60,7 @@
     </div>
     <section><h3>Problem</h3><p>Rigging a VTuber avatar — skeleton, skin weights, expressions, spring bones — takes hours of manual work in Blender, and screenshot-based reconstruction from a flat image is harder still.</p></section>
     <section><h3>Approach</h3><p>Two paths, fully local (no paid APIs): Path A — a 3D model (GLB/GLTF/VRM/OBJ) → VRM 1.0; Path B — front/side/back screenshots → VRM 1.0. K-Means + curvature body segmentation, a 53-bone VRM skeleton predictor, RBF + Laplacian skin weights, 17 expressions, springs for hair/clothing, plus headless-VRM and LPIPS/CLIP perceptual QA gates.</p></section>
-    <section><h3>Evidence</h3><div class="gallery"><figure class="shot frame-img"><img src="../../assets/media/full/rigger-pipeline.jpg" alt="VTuber Rigger" loading="lazy"><figcaption>VTuber Rigger</figcaption></figure></div></section>
+    <section><h3>Evidence</h3><div class="gallery"><figure class="shot frame-img"><img src="../../assets/media/full/rigger-pipeline.jpg" alt="VTuber Rigger"><figcaption>VTuber Rigger</figcaption></figure></div></section>
     <section><h3>Stack</h3><div class="chips"><span class="chip">Python</span><span class="chip">trimesh</span><span class="chip">pygltflib</span><span class="chip">numpy / scipy / scikit-learn</span><span class="chip">OpenCV</span><span class="chip">pytest (unit + integration + property + perceptual). Публичный: github.com/kukhtik/RIGGER</span></div></section>
     <section><h3>Links</h3><div class="chips"><a class="chip" href="https://github.com/kukhtik/RIGGER">github.com</a></div></section>
     <p style="margin-top:18px;font-size:14px;letter-spacing:.05em;text-transform:uppercase;color:var(--accent)">Source: README.ru.md § VTuber Rigger</p>

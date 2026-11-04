@@ -60,7 +60,7 @@
     </div>
     <section><h3>Задача</h3><p>Кодинг-агент работает на станции, но управлять им с телефона не должно требовать ноутбука.</p></section>
     <section><h3>Подход</h3><p>Telegram-бот на Java 21 без зависимостей (63 класса, ~10,9k строк, обычный javac — без Maven/Gradle): мост к локальному серверу кодинг-агента по JSON-RPC/WebSocket — живые состояния хода, аппрувы, переключение/импорт/архив сессий, вложения, срочный steering; режим, где каждый пользователь подключает свою машину.</p></section>
-    <section><h3>Доказательства</h3><div class="gallery"><figure class="shot frame-img"><img src="../../../assets/media/full/codebot-build.jpg" alt="Codebot" loading="lazy"><figcaption>Codebot</figcaption></figure></div></section>
+    <section><h3>Доказательства</h3><div class="gallery"><figure class="shot frame-img"><img src="../../../assets/media/full/codebot-build.jpg" alt="Codebot"><figcaption>Codebot</figcaption></figure></div></section>
     <section><h3>Стек</h3><div class="chips"><span class="chip">Java 21 (без build-системы)</span><span class="chip">Telegram Bot API (long polling + webhook)</span><span class="chip">JSON-RPC поверх WebSocket</span><span class="chip">Docker Compose + Playwright-sidecar для браузерных инструментов. *(Исходники локальные</span><span class="chip">здесь описана архитектура.)*</span></div></section>
     
     <p style="margin-top:18px;font-size:14px;letter-spacing:.05em;text-transform:uppercase;color:var(--accent)">Источник: README.ru.md § Codebot</p>
