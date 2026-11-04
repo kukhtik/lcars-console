@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru" data-theme="classic">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hermes Viz — телеметрическая консоль агентной фермы — LCARS CONSOLE</title>
+<meta name="description" content="Один экран с тремя фасетами поверх живых данных: OPS — радиальный «ролодекс» живой команды (статус, модель, текущий инструмент, активность); PIPELINE — доска задач с зависимостями, прогонами и блокировками; KNOWLEDGE — г">
+<meta property="og:title" content="Hermes Viz — телеметрическая консоль агентной фермы — LCARS CONSOLE">
+<meta property="og:description" content="Один экран с тремя фасетами поверх живых данных: OPS — радиальный «ролодекс» живой команды (статус, модель, текущий инструмент, активность); PIPELINE — доска задач с зависимостями, прогонами и блокировками; KNOWLEDGE — г">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../../../assets/console.css">
+<link rel="stylesheet" href="../../../assets/themes.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Максим Кухто","jobTitle":"Python / AI-инженер","url":"https://github.com/kukhtik","email":"mailto:maxkukhto@gmail.com"}</script>
+</head>
+<body class="page boot">
+<canvas class="stars" id="stars" aria-hidden="true"></canvas>
+<div class="frame">
+<aside class="rail">
+  <div class="rail-top">
+    <div class="panel p1"><span class="num">01</span><span class="who">MAXIM<br>KUKHTO</span></div>
+    <div class="panel p2"><span class="tag">NAV</span><nav class="rail-nav"><a href="../../../"><b>01</b><span>HOME</span></a><a href="../../../work/" aria-current="page"><b>02</b><span>WORK</span></a><a href="../../../about/"><b>03</b><span>ABOUT</span></a><a href="../../../contact/"><b>04</b><span>CONTACT</span></a></nav></div>
+  </div>
+  <div class="rail-body">
+    <div class="panel p3"><span class="tag"><i class="dot"></i>STATUS</span>
+      <div class="rail-readout">
+        <div><b>CLOCK</b><span id="clock">--:--:--</span></div>
+        <div><b>DATE</b><span id="date">----.--.--</span></div>
+        <div><b>UPTIME</b><span id="uptime">00:00</span></div>
+      </div>
+    </div>
+    <div class="panel p4"><span class="tag">FACTS</span><div class="readout"><div class="readout-row"><b>систем в портфолио</b><span>14</span></div><div class="readout-row"><b>скриншота в архиве</b><span>31</span></div><div class="readout-row"><b>теста backend (Разгон)</b><span>320</span></div><div class="readout-row"><b>узла в графе (Hermes Viz)</b><span>2 292</span></div></div></div>
+    <div class="panel p5"><span class="tag">Тема · Язык</span>
+      <div class="rail-themes"><button type="button" data-theme-value="classic" title="classic" aria-label="classic" style="--swatch:#eb943a"></button><button type="button" data-theme-value="nemesis-blue" title="nemesis-blue" aria-label="nemesis-blue" style="--swatch:#88bbff"></button><button type="button" data-theme-value="lower-decks" title="lower-decks" aria-label="lower-decks" style="--swatch:#ff7700"></button><button type="button" data-theme-value="lower-decks-padd" title="lower-decks-padd" aria-label="lower-decks-padd" style="--swatch:#88eeff"></button><button type="button" data-theme-value="voyager" title="voyager" aria-label="voyager" style="--swatch:#ffbb33"></button><button type="button" data-theme-value="picard" title="picard" aria-label="picard" style="--swatch:#ff977b"></button></div>
+      <div class="rail-note"><a class="lang-switch" href="../../../">EN</a> / RU · classic</div>
+    </div>
+    <div class="panel p6"><span class="tag">COMMS</span><div class="rail-readout">
+      <div><a href="mailto:maxkukhto@gmail.com">maxkukhto@gmail.com</a></div>
+      <div><a href="https://github.com/kukhtik">github.com/kukhtik</a></div>
+      <div style="margin-top:4px">Могилёв, BY · UTC+3</div>
+    </div></div>
+  </div>
+</aside>
+<div class="field">
+  <h1 class="banner">Hermes Viz<span class="code">CASE 04</span></h1>
+  <div class="cascade" aria-label="measured telemetry"><div class="cell"><span>систем</span><b>14</b></div><div class="cell"><span>измеренных метрик</span><b>44</b></div><div class="cell"><span>тестов backend</span><b>320</b></div><div class="cell"><span>тестов frontend</span><b>161</b></div><div class="cell"><span>e2e-спеков</span><b>89</b></div><div class="cell"><span>узлов графа</span><b>2 292</b></div><div class="cell"><span>агентов</span><b>21</b></div><div class="cell"><span>моделей</span><b>9</b></div><div class="cell"><span>бенчмарк RAG</span><b>96/100</b></div><div class="cell"><span>латентность p50</span><b>130 ms</b></div><div class="cell"><span>фактов в каталоге</span><b>21 214</b></div><div class="cell"><span>тестов проходят</span><b>768/775</b></div><div class="cell"><span>покрытие ветвей</span><b>≥84%</b></div><div class="cell"><span>торговый стенд</span><b>PF 1.44</b></div></div>
+  <div class="spacer" aria-hidden="true"></div>
+  <nav class="nav"><a href="../../../">01-HOME</a><a href="../../../work/" aria-current="page">02-WORK</a><a href="../../../about/">03-ABOUT</a><a href="../../../contact/">04-CONTACT</a></nav>
+  <div class="bars">
+  <div class="barrow"><i class="bar b1"></i><i class="bar b2"></i><i class="bar b3"></i><i class="bar b4"></i><i class="bar b5"></i></div>
+  <div class="barrow"><i class="bar b6"></i><i class="bar b7"></i><i class="bar b8"></i><i class="bar b9"></i><i class="bar b10"></i></div>
+</div>
+  <div class="main"><div class="doc">
+    <div class="case-head">
+      <div>
+        <p class="kicker">CASE 04 / lower-decks</p>
+        <h2>Hermes Viz</h2>
+        <p class="lead">Один экран с тремя фасетами поверх живых данных: OPS — радиальный «ролодекс» живой команды (статус, модель, текущий инструмент, активность); PIPELINE — доска задач с зависимостями, прогонами и блокировками; KNOWLEDGE — г</p>
+      </div>
+      <div class="case-metrics"><div class="metric"><b>2 292</b><span>узла в графе знаний</span></div><div class="metric"><b>21</b><span>агент в ферме</span></div><div class="metric"><b>9</b><span>моделей</span></div></div>
+    </div>
+    <section><h3>Задача</h3><p>Мультиагентная ферма (21 агент, 9 моделей, асинхронная доска задач) непрозрачна с одного взгляда: кто что делает, где задача встала, что реально отдаёт база знаний.</p></section>
+    <section><h3>Подход</h3><p>Один экран с тремя фасетами поверх живых данных: OPS — радиальный «ролодекс» живой команды (статус, модель, текущий инструмент, активность); PIPELINE — доска задач с зависимостями, прогонами и блокировками; KNOWLEDGE — граф репозитория (2 292 узла, 839 рёбер) с потоком ретривала. OPS — живая команда как сенсор-ролодекс KNOWLEDGE — граф репозитория, 2 292 узла PIPELINE — доска задач с прогонами и блокировками</p></section>
+    <section><h3>Доказательства</h3><div class="gallery"><figure class="shot frame-img"><img src="../../../assets/media/full/hermes-viz-ops.jpg" alt="Hermes Viz" loading="lazy"><figcaption>Hermes Viz</figcaption></figure><figure class="shot frame-img"><img src="../../../assets/media/full/hermes-viz-knowledge.jpg" alt="Hermes Viz" loading="lazy"><figcaption>Hermes Viz</figcaption></figure><figure class="shot frame-img"><img src="../../../assets/media/full/hermes-viz-pipeline.jpg" alt="Hermes Viz" loading="lazy"><figcaption>Hermes Viz</figcaption></figure></div></section>
+    <section><h3>Стек</h3><div class="chips"><span class="chip">JavaScript (canvas-консоль)</span><span class="chip">WebSocket-поток событий</span><span class="chip">SQLite (канбан-БД)</span><span class="chip">семантический граф с рёбрами импортов и эмбеддингов</span></div></section>
+    
+    <p style="margin-top:18px;font-size:14px;letter-spacing:.05em;text-transform:uppercase;color:var(--accent)">Источник: README.ru.md § Hermes Viz</p>
+    <p><a class="btn" href="../../../work/">← ВСЕ СИСТЕМЫ</a></p>
+  </div></div>
+</div>
+</div>
+<div class="baseboard"></div>
+
+<script src="../../../assets/app.js"></script>
+</body>
+</html>
