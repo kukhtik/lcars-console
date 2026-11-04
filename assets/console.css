@@ -588,9 +588,6 @@ body.page .baseboard::before { position: static; display: block; }
 
 /* ---------- глобальный слой движения ---------- */
 
-body, .panel, .metric, .strip-item, .work-item, .nav a, .bar, .chip {
-  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
-}
 
 .stars {
   position: fixed;
