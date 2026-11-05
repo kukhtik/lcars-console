@@ -912,3 +912,10 @@ html[data-motion="reduced"] .main { animation: none; }
   .progress { display: none; }
   .state-chip { display: none; }
 }
+
+/* лестница состояний: колесо всегда доводит до целого экрана */
+@media (min-width: 901px) {
+  html { scroll-snap-type: y mandatory; }
+  .track .step { scroll-snap-align: start; }
+  .track .step { scroll-snap-stop: always; }
+}
