@@ -126,18 +126,21 @@
     });
   }
   if (states.length) setState(0);
-  if (steps.length && "IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) setState(steps.indexOf(e.target));
-      });
-    }, { threshold: 0.5 });
-    steps.forEach(function (s) { io.observe(s); });
+  var trackEl = document.querySelector(".track");
+  function onScroll() {
+    if (!states.length) return;
+    var i = Math.round(window.scrollY / Math.max(1, window.innerHeight));
+    setState(Math.max(0, Math.min(states.length - 1, i)));
+  }
+  if (trackEl) {
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    onScroll();
   }
   document.querySelectorAll("[data-state-link]").forEach(function (a) {
     a.addEventListener("click", function (ev) {
       var i = Number(a.getAttribute("data-state-link"));
-      if (steps[i]) { ev.preventDefault(); steps[i].scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" }); }
+      if (steps[i]) { ev.preventDefault(); steps[i].scrollIntoView({ behavior: motion === "full" ? "smooth" : "auto", block: "start" }); }
     });
   });
   document.addEventListener("keydown", function (e) {
