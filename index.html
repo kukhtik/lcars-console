@@ -42,7 +42,8 @@
   </div>
 </aside>
 <div class="field">
-  <h1 class="banner"><span class="banner-title">LCARS CONSOLE</span><span class="cursor" aria-hidden="true"></span><span class="code">02-262000</span></h1>
+  <h1 class="banner"><span class="banner-title">LCARS CONSOLE</span><span class="cursor" aria-hidden="true"></span><span class="state-chip" id="state-chip">01</span><span class="code" id="banner-code">02-262000</span></h1>
+  <div class="progress" id="progress" aria-hidden="true"><i></i></div>
   <div class="spacer"></div>
   <div class="bars">
   <div class="barrow"><i class="bar b1"></i><i class="bar b2"></i><i class="bar b3"></i><i class="bar b4"></i><i class="bar b5"></i></div>
@@ -60,7 +61,7 @@
   </div>
   <div class="spacer"></div>
   <nav class="nav"><a href="" aria-current="page">01-HOME</a><a href="work/">02-WORK</a><a href="about/">03-ABOUT</a><a href="contact/">04-CONTACT</a></nav>
-  <div class="main"><div class="screen"><section class="state is-on" data-state="boot">
+  <div class="main"><div class="screen"><section class="state is-on" data-state="boot" data-name="CONSOLE">
   <div class="col">
     <p class="kicker">PERSONAL CONSOLE · 01</p>
     <h2 class="display">MAXIM KUKHTO<br><em>Python / AI engineer</em></h2>
@@ -69,7 +70,7 @@
   </div>
   <div class="col">
     <div class="facts"><div class="metric"><b>14</b><span>systems shipped</span></div><div class="metric"><b>31</b><span>screenshots on file</span></div><div class="metric"><b>320</b><span>backend tests (Razgon)</span></div><div class="metric"><b>2 292</b><span>nodes in graph (Hermes Viz)</span></div></div>
-    <div class="readout" style="margin-top:12px">
+    <div class="readout" style="margin-top:10px">
       <div class="readout-row"><b>ROLE</b><span>Python / AI engineer</span></div>
       <div class="readout-row"><b>LOCATION</b><span>Могилёв, BY · UTC+3</span></div>
       <div class="readout-row"><b>STATUS</b><span>available · remote</span></div>
@@ -78,40 +79,45 @@
   </div>
   <div class="col col--wide">
     <div class="textbar textbar--alt">LATEST SYSTEMS</div>
-    <div class="strip">
-      <a class="strip-item" href="case/codebot/"><b>63</b><span>Codebot</span></a><a class="strip-item" href="case/engineer-companion/"><b>96/100</b><span>Engineer Companion</span></a><a class="strip-item" href="case/geoconverter/"><b>1e-12</b><span>GeoConverter</span></a><a class="strip-item" href="case/hermes-viz/"><b>2 292</b><span>Hermes Viz</span></a>
-    </div>
+    <div class="strip"><a class="strip-item" href="case/codebot/"><b>63</b><span>Codebot</span></a><a class="strip-item" href="case/engineer-companion/"><b>96/100</b><span>Engineer Companion</span></a><a class="strip-item" href="case/geoconverter/"><b>1e-12</b><span>GeoConverter</span></a><a class="strip-item" href="case/hermes-viz/"><b>2 292</b><span>Hermes Viz</span></a></div>
   </div>
-</section><section class="state" data-state="systems">
+</section><section class="state" data-state="systems" data-name="SYSTEMS">
   <div class="col">
     <p class="kicker">SYSTEMS · 02</p>
     <h2>Three systems, three kinds of proof.</h2>
     <p class="lead">The executor never sees the expected value. A different model verifies the work in a clean context. The oracle has no model at all.</p>
+    <div class="facts" style="margin-top:14px">
+      <div class="metric"><b>320</b><span>backend tests</span></div>
+      <div class="metric"><b>≥84%</b><span>branch coverage</span></div>
+    </div>
   </div>
   <div class="col">
-    <div class="list-systems" style="grid-template-columns:1fr">
-      <a href="case/engineer-companion/"><span>Engineer Companion</span><i>96/100 grounded-qa-100-v1 benchmark</i></a><a href="case/swarm/"><span>Swarm</span><i>11/11 checks green</i></a><a href="case/razgon-quiz/"><span>Разгон Квиз</span><i>320 backend tests</i></a>
-    </div>
-    <p style="margin-top:12px"><a class="btn" href="work/">ALL SYSTEMS</a></p>
+    <div class="textbar">ALL SYSTEMS · 14</div>
+    <div class="list-systems tight"><a href="case/codebot/"><span><b class="ln">01</b>Codebot</span><i>voyager</i></a><a href="case/engineer-companion/"><span><b class="ln">02</b>Engineer Companion</span><i>picard</i></a><a href="case/geoconverter/"><span><b class="ln">03</b>GeoConverter</span><i>lower-decks</i></a><a href="case/hermes-viz/"><span><b class="ln">04</b>Hermes Viz</span><i>lower-decks</i></a><a href="case/neuro-property/"><span><b class="ln">05</b>Neuro Property Trade</span><i>picard</i></a><a href="case/penapivo/"><span><b class="ln">06</b>PenaPivo / BeerLog</span><i>lower-decks-padd</i></a><a href="case/razgon-quiz/"><span><b class="ln">07</b>Разгон Квиз</span><i>nemesis-blue</i></a><a href="case/static-sites/"><span><b class="ln">08</b>Статические сайты</span><i>classic</i></a><a href="case/storybeam/"><span><b class="ln">09</b>Storybeam</span><i>classic</i></a><a href="case/streaming-prediction/"><span><b class="ln">10</b>Streaming stateful prediction</span><i>picard</i></a><a href="case/swarm/"><span><b class="ln">11</b>Swarm</span><i>nemesis-blue</i></a><a href="case/trading-stand/"><span><b class="ln">12</b>Торговый исследовательский стенд</span><i>lower-decks-padd</i></a><a href="case/vetka-dwg/"><span><b class="ln">13</b>VETKA_DWG</span><i>voyager</i></a><a href="case/vtuber-rigger/"><span><b class="ln">14</b>VTuber Rigger</span><i>classic</i></a></div>
   </div>
-</section><section class="state" data-state="evidence">
+  <div class="col col--wide">
+    <div class="strip"><a class="strip-item" href="#"><b>2 292</b><span>nodes in graph</span></a><a class="strip-item" href="#"><b>161</b><span>engine tests</span></a><a class="strip-item" href="#"><b>89</b><span>e2e specs</span></a><a class="strip-item" href="#"><b>0</b><span>runtime deps</span></a></div>
+  </div>
+</section><section class="state" data-state="evidence" data-name="EVIDENCE">
   <div class="col">
     <p class="kicker">EVIDENCE · 03</p>
     <h2>MEASURED, NOT CLAIMED</h2>
     <p class="lead">Every number below comes from a measured run. Nothing here is an estimate.</p>
+    <p class="mono-note">Each number has a run, a date and a command behind it.</p>
   </div>
   <div class="col">
-    <div class="readout"><div class="readout-row"><b>RAG benchmark, grounded-qa-100-v1</b><span>96/100</span></div><div class="readout-row"><b>p50 latency, Engineer Companion</b><span>130 ms</span></div><div class="readout-row"><b>backend tests, Razgon Quiz</b><span>320</span></div><div class="readout-row"><b>nodes in the knowledge graph</b><span>2 292</span></div><div class="readout-row"><b>branch coverage, CI gate</b><span>≥84%</span></div><div class="readout-row"><b>trading stand, 4h, 2 526 trades</b><span>PF 1.44</span></div></div>
+    <div class="ev-grid"><div class="ev-card"><b>96/100</b><span>RAG benchmark</span><i>grounded-qa-100-v1</i></div><div class="ev-card"><b>130 ms</b><span>p50 latency</span><i>Engineer Companion</i></div><div class="ev-card"><b>320</b><span>backend tests</span><i>Razgon Quiz</i></div><div class="ev-card"><b>2 292</b><span>graph nodes</span><i>Hermes Viz</i></div><div class="ev-card"><b>≥84%</b><span>branch coverage</span><i>CI gate</i></div><div class="ev-card"><b>PF 1.44</b><span>profit factor</span><i>2 526 trades / 4h</i></div></div>
   </div>
-</section><section class="state" data-state="work">
+</section><section class="state" data-state="work" data-name="WORK">
   <div class="col col--wide">
     <p class="kicker">WORK · 04</p>
     <h2>All systems</h2>
-    <div class="list-systems">
-      <a href="case/codebot/"><span>01 · Codebot</span><i>63</i></a><a href="case/engineer-companion/"><span>02 · Engineer Companion</span><i>96/100</i></a><a href="case/geoconverter/"><span>03 · GeoConverter</span><i>1e-12</i></a><a href="case/hermes-viz/"><span>04 · Hermes Viz</span><i>2 292</i></a><a href="case/neuro-property/"><span>05 · Neuro Property Trade</span><i>161</i></a><a href="case/penapivo/"><span>06 · PenaPivo / BeerLog</span><i>≥84%</i></a><a href="case/razgon-quiz/"><span>07 · Разгон Квиз</span><i>320</i></a><a href="case/static-sites/"><span>08 · Статические сайты</span><i>0</i></a><a href="case/storybeam/"><span>09 · Storybeam</span><i>56</i></a><a href="case/streaming-prediction/"><span>10 · Streaming stateful prediction</span><i>4–5×</i></a><a href="case/swarm/"><span>11 · Swarm</span><i>11/11</i></a><a href="case/trading-stand/"><span>12 · Торговый исследовательский стенд</span><i>PF 1.44</i></a><a href="case/vetka-dwg/"><span>13 · VETKA_DWG</span><i>444/444</i></a><a href="case/vtuber-rigger/"><span>14 · VTuber Rigger</span><i>54</i></a>
-    </div>
+    <div class="list-systems tight"><a href="case/codebot/"><span><b class="ln">01</b>Codebot</span><i>63</i></a><a href="case/engineer-companion/"><span><b class="ln">02</b>Engineer Companion</span><i>96/100</i></a><a href="case/geoconverter/"><span><b class="ln">03</b>GeoConverter</span><i>1e-12</i></a><a href="case/hermes-viz/"><span><b class="ln">04</b>Hermes Viz</span><i>2 292</i></a><a href="case/neuro-property/"><span><b class="ln">05</b>Neuro Property Trade</span><i>161</i></a><a href="case/penapivo/"><span><b class="ln">06</b>PenaPivo / BeerLog</span><i>≥84%</i></a><a href="case/razgon-quiz/"><span><b class="ln">07</b>Разгон Квиз</span><i>320</i></a><a href="case/static-sites/"><span><b class="ln">08</b>Статические сайты</span><i>0</i></a><a href="case/storybeam/"><span><b class="ln">09</b>Storybeam</span><i>56</i></a><a href="case/streaming-prediction/"><span><b class="ln">10</b>Streaming stateful prediction</span><i>4–5×</i></a><a href="case/swarm/"><span><b class="ln">11</b>Swarm</span><i>11/11</i></a><a href="case/trading-stand/"><span><b class="ln">12</b>Торговый исследовательский стенд</span><i>PF 1.44</i></a><a href="case/vetka-dwg/"><span><b class="ln">13</b>VETKA_DWG</span><i>444/444</i></a><a href="case/vtuber-rigger/"><span><b class="ln">14</b>VTuber Rigger</span><i>54</i></a></div>
   </div>
-</section><section class="state" data-state="method">
+  <div class="col col--wide">
+    <div class="strip"><a class="strip-item" href="#"><b>14</b><span>systems shipped</span></a><a class="strip-item" href="#"><b>44</b><span>measured metrics</span></a><a class="strip-item" href="#"><b>28</b><span>screenshots on file</span></a><a class="strip-item" href="#"><b>6</b><span>LCARS themes</span></a></div>
+  </div>
+</section><section class="state" data-state="method" data-name="METHOD">
   <div class="col">
     <p class="kicker">METHOD · 05</p>
     <h2>One frozen card, three machine gates.</h2>
@@ -124,25 +130,31 @@
       <div class="readout-row"><b>GATE 3</b><span>beam — final review before the card closes</span></div>
     </div>
   </div>
-</section><section class="state" data-state="rest">
+  <div class="col col--wide">
+    <div class="pipeline"><div class="pipe"><b>01</b><span>BRIEF</span><i>goal + constraints</i></div><div class="pipe"><b>02</b><span>CONTRACT</span><i>oracle first</i></div><div class="pipe"><b>03</b><span>BUILD</span><i>one card, one owner</i></div><div class="pipe"><b>04</b><span>PROOF</span><i>render + numbers</i></div><div class="pipe"><b>05</b><span>PUBLISH</span><i>hash check</i></div></div>
+  </div>
+</section><section class="state" data-state="rest" data-name="COMMS">
   <div class="col">
     <p class="kicker">COMMS · 06</p>
     <h2>Open channel. No forms, no trackers.</h2>
-    <div class="contact-list">
-      <a href="mailto:maxkukhto@gmail.com"><span>EMAIL</span><span>maxkukhto@gmail.com</span></a>
+    <a class="mail" href="mailto:maxkukhto@gmail.com">maxkukhto@gmail.com</a>
+    <div class="contact-list" style="margin-top:14px">
       <a href="https://github.com/kukhtik"><span>GITHUB</span><span>github.com/kukhtik</span></a>
       <a href="contact/"><span>Links</span><span>→</span></a>
+      <a href="work/"><span>All systems</span><span>14</span></a>
     </div>
   </div>
   <div class="col">
-    <p class="kicker">SYSTEM</p>
     <div class="readout">
       <div class="readout-row"><b>LOCATION</b><span>Могилёв, BY · UTC+3</span></div>
-      <div class="readout-row"><b>Theme</b><span>6 · classic</span></div>
-      <div class="readout-row"><b>FONT</b><span>Oswald 400/600</span></div>
-      <div class="readout-row"><b>DEPS</b><span>0</span></div>
+      <div class="readout-row"><b>TIMEZONE</b><span>UTC+3</span></div>
+      <div class="readout-row"><b>REPLY</b><span>within 24 h</span></div>
+      <div class="readout-row"><b>STATUS</b><span>available · remote</span></div>
     </div>
-    <p style="margin-top:14px;font-size:14px;letter-spacing:.06em;text-transform:uppercase">Built by hand: no frameworks, no third-party libraries, one font.</p>
+    <p style="margin-top:12px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;opacity:.75">Built by hand: no frameworks, no third-party libraries, one font.</p>
+  </div>
+  <div class="col col--wide">
+    <div class="strip"><a class="strip-item" href="#"><b>BRIEF</b><span>1 page, plain words</span></a><a class="strip-item" href="#"><b>ESTIMATE</b><span>scope, not hours</span></a><a class="strip-item" href="#"><b>START</b><span>next week</span></a></div>
   </div>
 </section></div></div>
 </div>

@@ -42,7 +42,8 @@
   </div>
 </aside>
 <div class="field">
-  <h1 class="banner"><span class="banner-title">LCARS CONSOLE</span><span class="cursor" aria-hidden="true"></span><span class="code">02-262000</span></h1>
+  <h1 class="banner"><span class="banner-title">LCARS CONSOLE</span><span class="cursor" aria-hidden="true"></span><span class="state-chip" id="state-chip">01</span><span class="code" id="banner-code">02-262000</span></h1>
+  <div class="progress" id="progress" aria-hidden="true"><i></i></div>
   <div class="spacer"></div>
   <div class="bars">
   <div class="barrow"><i class="bar b1"></i><i class="bar b2"></i><i class="bar b3"></i><i class="bar b4"></i><i class="bar b5"></i></div>
@@ -60,7 +61,7 @@
   </div>
   <div class="spacer"></div>
   <nav class="nav"><a href="../" aria-current="page">01-HOME</a><a href="../work/">02-WORK</a><a href="../about/">03-ABOUT</a><a href="../contact/">04-CONTACT</a></nav>
-  <div class="main"><div class="screen"><section class="state is-on" data-state="boot">
+  <div class="main"><div class="screen"><section class="state is-on" data-state="boot" data-name="CONSOLE">
   <div class="col">
     <p class="kicker">PERSONAL CONSOLE · 01</p>
     <h2 class="display">MAXIM KUKHTO<br><em>Python / AI-инженер</em></h2>
@@ -69,7 +70,7 @@
   </div>
   <div class="col">
     <div class="facts"><div class="metric"><b>14</b><span>систем в портфолио</span></div><div class="metric"><b>31</b><span>скриншота в архиве</span></div><div class="metric"><b>320</b><span>теста backend (Разгон)</span></div><div class="metric"><b>2 292</b><span>узла в графе (Hermes Viz)</span></div></div>
-    <div class="readout" style="margin-top:12px">
+    <div class="readout" style="margin-top:10px">
       <div class="readout-row"><b>ROLE</b><span>Python / AI-инженер</span></div>
       <div class="readout-row"><b>LOCATION</b><span>Могилёв, BY · UTC+3</span></div>
       <div class="readout-row"><b>STATUS</b><span>доступен · удалённо</span></div>
@@ -78,40 +79,45 @@
   </div>
   <div class="col col--wide">
     <div class="textbar textbar--alt">ПОСЛЕДНИЕ СИСТЕМЫ</div>
-    <div class="strip">
-      <a class="strip-item" href="../case/codebot/"><b>63</b><span>Codebot</span></a><a class="strip-item" href="../case/engineer-companion/"><b>96/100</b><span>Engineer Companion</span></a><a class="strip-item" href="../case/geoconverter/"><b>1e-12</b><span>GeoConverter</span></a><a class="strip-item" href="../case/hermes-viz/"><b>2 292</b><span>Hermes Viz</span></a>
-    </div>
+    <div class="strip"><a class="strip-item" href="../case/codebot/"><b>63</b><span>Codebot</span></a><a class="strip-item" href="../case/engineer-companion/"><b>96/100</b><span>Engineer Companion</span></a><a class="strip-item" href="../case/geoconverter/"><b>1e-12</b><span>GeoConverter</span></a><a class="strip-item" href="../case/hermes-viz/"><b>2 292</b><span>Hermes Viz</span></a></div>
   </div>
-</section><section class="state" data-state="systems">
+</section><section class="state" data-state="systems" data-name="SYSTEMS">
   <div class="col">
     <p class="kicker">SYSTEMS · 02</p>
     <h2>Три системы — три разных способа доказательства.</h2>
     <p class="lead">Исполнитель не видит ожидаемого значения. Другая модель пересчитывает ответ в чистом контексте. У оракула модели нет вообще.</p>
+    <div class="facts" style="margin-top:14px">
+      <div class="metric"><b>320</b><span>тестов backend</span></div>
+      <div class="metric"><b>≥84%</b><span>покрытие ветвей</span></div>
+    </div>
   </div>
   <div class="col">
-    <div class="list-systems" style="grid-template-columns:1fr">
-      <a href="../case/engineer-companion/"><span>Engineer Companion</span><i>96/100 бенчмарк grounded-qa-100-v1</i></a><a href="../case/swarm/"><span>Swarm</span><i>11/11 проверок зелёные</i></a><a href="../case/razgon-quiz/"><span>Разгон Квиз</span><i>320 тестов backend</i></a>
-    </div>
-    <p style="margin-top:12px"><a class="btn" href="../work/">ВСЕ СИСТЕМЫ</a></p>
+    <div class="textbar">ВСЕ СИСТЕМЫ · 14</div>
+    <div class="list-systems tight"><a href="../case/codebot/"><span><b class="ln">01</b>Codebot</span><i>voyager</i></a><a href="../case/engineer-companion/"><span><b class="ln">02</b>Engineer Companion</span><i>picard</i></a><a href="../case/geoconverter/"><span><b class="ln">03</b>GeoConverter</span><i>lower-decks</i></a><a href="../case/hermes-viz/"><span><b class="ln">04</b>Hermes Viz</span><i>lower-decks</i></a><a href="../case/neuro-property/"><span><b class="ln">05</b>Neuro Property Trade</span><i>picard</i></a><a href="../case/penapivo/"><span><b class="ln">06</b>PenaPivo / BeerLog</span><i>lower-decks-padd</i></a><a href="../case/razgon-quiz/"><span><b class="ln">07</b>Разгон Квиз</span><i>nemesis-blue</i></a><a href="../case/static-sites/"><span><b class="ln">08</b>Статические сайты</span><i>classic</i></a><a href="../case/storybeam/"><span><b class="ln">09</b>Storybeam</span><i>classic</i></a><a href="../case/streaming-prediction/"><span><b class="ln">10</b>Streaming stateful prediction</span><i>picard</i></a><a href="../case/swarm/"><span><b class="ln">11</b>Swarm</span><i>nemesis-blue</i></a><a href="../case/trading-stand/"><span><b class="ln">12</b>Торговый исследовательский стенд</span><i>lower-decks-padd</i></a><a href="../case/vetka-dwg/"><span><b class="ln">13</b>VETKA_DWG</span><i>voyager</i></a><a href="../case/vtuber-rigger/"><span><b class="ln">14</b>VTuber Rigger</span><i>classic</i></a></div>
   </div>
-</section><section class="state" data-state="evidence">
+  <div class="col col--wide">
+    <div class="strip"><a class="strip-item" href="#"><b>2 292</b><span>узлов в графе</span></a><a class="strip-item" href="#"><b>161</b><span>тестов движка</span></a><a class="strip-item" href="#"><b>89</b><span>e2e-спеки</span></a><a class="strip-item" href="#"><b>0</b><span>зависимостей</span></a></div>
+  </div>
+</section><section class="state" data-state="evidence" data-name="EVIDENCE">
   <div class="col">
     <p class="kicker">EVIDENCE · 03</p>
     <h2>ИЗМЕРЕНО, А НЕ ЗАЯВЛЕНО</h2>
     <p class="lead">Каждое число ниже — из измеренного прогона. Оценок здесь нет.</p>
+    <p class="mono-note">За каждым числом — прогон, дата и команда.</p>
   </div>
   <div class="col">
-    <div class="readout"><div class="readout-row"><b>бенчмарк RAG, grounded-qa-100-v1</b><span>96/100</span></div><div class="readout-row"><b>p50 латентность, Engineer Companion</b><span>130 ms</span></div><div class="readout-row"><b>тестов backend, Разгон Квиз</b><span>320</span></div><div class="readout-row"><b>узла в графе знаний</b><span>2 292</span></div><div class="readout-row"><b>покрытие ветвей, CI-гейт</b><span>≥84%</span></div><div class="readout-row"><b>торговый стенд, 4h, 2 526 сделок</b><span>PF 1.44</span></div></div>
+    <div class="ev-grid"><div class="ev-card"><b>96/100</b><span>бенчмарк RAG</span><i>grounded-qa-100-v1</i></div><div class="ev-card"><b>130 ms</b><span>p50 латентность</span><i>Engineer Companion</i></div><div class="ev-card"><b>320</b><span>тестов backend</span><i>Razgon Quiz</i></div><div class="ev-card"><b>2 292</b><span>узлов графа</span><i>Hermes Viz</i></div><div class="ev-card"><b>≥84%</b><span>покрытие ветвей</span><i>CI gate</i></div><div class="ev-card"><b>PF 1.44</b><span>профит-фактор</span><i>2 526 trades / 4h</i></div></div>
   </div>
-</section><section class="state" data-state="work">
+</section><section class="state" data-state="work" data-name="WORK">
   <div class="col col--wide">
     <p class="kicker">WORK · 04</p>
     <h2>Все системы</h2>
-    <div class="list-systems">
-      <a href="../case/codebot/"><span>01 · Codebot</span><i>63</i></a><a href="../case/engineer-companion/"><span>02 · Engineer Companion</span><i>96/100</i></a><a href="../case/geoconverter/"><span>03 · GeoConverter</span><i>1e-12</i></a><a href="../case/hermes-viz/"><span>04 · Hermes Viz</span><i>2 292</i></a><a href="../case/neuro-property/"><span>05 · Neuro Property Trade</span><i>161</i></a><a href="../case/penapivo/"><span>06 · PenaPivo / BeerLog</span><i>≥84%</i></a><a href="../case/razgon-quiz/"><span>07 · Разгон Квиз</span><i>320</i></a><a href="../case/static-sites/"><span>08 · Статические сайты</span><i>0</i></a><a href="../case/storybeam/"><span>09 · Storybeam</span><i>56</i></a><a href="../case/streaming-prediction/"><span>10 · Streaming stateful prediction</span><i>4–5×</i></a><a href="../case/swarm/"><span>11 · Swarm</span><i>11/11</i></a><a href="../case/trading-stand/"><span>12 · Торговый исследовательский стенд</span><i>PF 1.44</i></a><a href="../case/vetka-dwg/"><span>13 · VETKA_DWG</span><i>444/444</i></a><a href="../case/vtuber-rigger/"><span>14 · VTuber Rigger</span><i>54</i></a>
-    </div>
+    <div class="list-systems tight"><a href="../case/codebot/"><span><b class="ln">01</b>Codebot</span><i>63</i></a><a href="../case/engineer-companion/"><span><b class="ln">02</b>Engineer Companion</span><i>96/100</i></a><a href="../case/geoconverter/"><span><b class="ln">03</b>GeoConverter</span><i>1e-12</i></a><a href="../case/hermes-viz/"><span><b class="ln">04</b>Hermes Viz</span><i>2 292</i></a><a href="../case/neuro-property/"><span><b class="ln">05</b>Neuro Property Trade</span><i>161</i></a><a href="../case/penapivo/"><span><b class="ln">06</b>PenaPivo / BeerLog</span><i>≥84%</i></a><a href="../case/razgon-quiz/"><span><b class="ln">07</b>Разгон Квиз</span><i>320</i></a><a href="../case/static-sites/"><span><b class="ln">08</b>Статические сайты</span><i>0</i></a><a href="../case/storybeam/"><span><b class="ln">09</b>Storybeam</span><i>56</i></a><a href="../case/streaming-prediction/"><span><b class="ln">10</b>Streaming stateful prediction</span><i>4–5×</i></a><a href="../case/swarm/"><span><b class="ln">11</b>Swarm</span><i>11/11</i></a><a href="../case/trading-stand/"><span><b class="ln">12</b>Торговый исследовательский стенд</span><i>PF 1.44</i></a><a href="../case/vetka-dwg/"><span><b class="ln">13</b>VETKA_DWG</span><i>444/444</i></a><a href="../case/vtuber-rigger/"><span><b class="ln">14</b>VTuber Rigger</span><i>54</i></a></div>
   </div>
-</section><section class="state" data-state="method">
+  <div class="col col--wide">
+    <div class="strip"><a class="strip-item" href="#"><b>14</b><span>систем выпущено</span></a><a class="strip-item" href="#"><b>44</b><span>измеренных метрик</span></a><a class="strip-item" href="#"><b>28</b><span>скриншотов в архиве</span></a><a class="strip-item" href="#"><b>6</b><span>тем LCARS</span></a></div>
+  </div>
+</section><section class="state" data-state="method" data-name="METHOD">
   <div class="col">
     <p class="kicker">METHOD · 05</p>
     <h2>Одна замороженная карточка, три машинных гейта.</h2>
@@ -124,25 +130,31 @@
       <div class="readout-row"><b>GATE 3</b><span>beam — финальное ревью перед закрытием карточки</span></div>
     </div>
   </div>
-</section><section class="state" data-state="rest">
+  <div class="col col--wide">
+    <div class="pipeline"><div class="pipe"><b>01</b><span>БРИФ</span><i>цель + ограничения</i></div><div class="pipe"><b>02</b><span>КОНТРАКТ</span><i>сначала оракул</i></div><div class="pipe"><b>03</b><span>СБОРКА</span><i>одна карточка, один владелец</i></div><div class="pipe"><b>04</b><span>ДОКАЗАТЕЛЬСТВО</span><i>рендер + числа</i></div><div class="pipe"><b>05</b><span>ПУБЛИКАЦИЯ</span><i>сверка хешей</i></div></div>
+  </div>
+</section><section class="state" data-state="rest" data-name="COMMS">
   <div class="col">
     <p class="kicker">COMMS · 06</p>
     <h2>Открытый канал. Без форм и трекеров.</h2>
-    <div class="contact-list">
-      <a href="mailto:maxkukhto@gmail.com"><span>EMAIL</span><span>maxkukhto@gmail.com</span></a>
+    <a class="mail" href="mailto:maxkukhto@gmail.com">maxkukhto@gmail.com</a>
+    <div class="contact-list" style="margin-top:14px">
       <a href="https://github.com/kukhtik"><span>GITHUB</span><span>github.com/kukhtik</span></a>
       <a href="../contact/"><span>Ссылки</span><span>→</span></a>
+      <a href="../work/"><span>Все системы</span><span>14</span></a>
     </div>
   </div>
   <div class="col">
-    <p class="kicker">SYSTEM</p>
     <div class="readout">
       <div class="readout-row"><b>LOCATION</b><span>Могилёв, BY · UTC+3</span></div>
-      <div class="readout-row"><b>Тема</b><span>6 · classic</span></div>
-      <div class="readout-row"><b>FONT</b><span>Oswald 400/600</span></div>
-      <div class="readout-row"><b>DEPS</b><span>0</span></div>
+      <div class="readout-row"><b>TIMEZONE</b><span>UTC+3</span></div>
+      <div class="readout-row"><b>REPLY</b><span>в течение 24 ч</span></div>
+      <div class="readout-row"><b>STATUS</b><span>доступен · удалённо</span></div>
     </div>
-    <p style="margin-top:14px;font-size:14px;letter-spacing:.06em;text-transform:uppercase">Собрано вручную: без фреймворков, без сторонних библиотек, один шрифт.</p>
+    <p style="margin-top:12px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;opacity:.75">Собрано вручную: без фреймворков, без сторонних библиотек, один шрифт.</p>
+  </div>
+  <div class="col col--wide">
+    <div class="strip"><a class="strip-item" href="#"><b>БРИФ</b><span>1 страница, простыми словами</span></a><a class="strip-item" href="#"><b>ОЦЕНКА</b><span>объём, не часы</span></a><a class="strip-item" href="#"><b>СТАРТ</b><span>со следующей недели</span></a></div>
   </div>
 </section></div></div>
 </div>

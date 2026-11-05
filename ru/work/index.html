@@ -42,7 +42,8 @@
   </div>
 </aside>
 <div class="field">
-  <h1 class="banner"><span class="banner-title">РАБОТЫ</span><span class="cursor" aria-hidden="true"></span><span class="code">03-111968</span></h1>
+  <h1 class="banner"><span class="banner-title">РАБОТЫ</span><span class="cursor" aria-hidden="true"></span><span class="state-chip" id="state-chip">01</span><span class="code" id="banner-code">03-111968</span></h1>
+  <div class="progress" id="progress" aria-hidden="true"><i></i></div>
   <div class="spacer"></div>
   <div class="bars">
   <div class="barrow"><i class="bar b1"></i><i class="bar b2"></i><i class="bar b3"></i><i class="bar b4"></i><i class="bar b5"></i></div>
@@ -60,63 +61,107 @@
   </div>
   <div class="spacer"></div>
   <nav class="nav"><a href="../../">01-HOME</a><a href="../../work/" aria-current="page">02-WORK</a><a href="../../about/">03-ABOUT</a><a href="../../contact/">04-CONTACT</a></nav>
-  <div class="main"><div class="doc"><section><h2>Все системы</h2><p class="lead">Три системы — три разных способа доказательства.</p></section>
-  <div class="work-grid"><a class="work-item" href="../../case/codebot/">
-    <span class="idx">01 · voyager</span>
-    <h3>Codebot</h3>
-    <span class="m"><b>63</b> класса, без зависимостей</span>
-  </a><a class="work-item" href="../../case/engineer-companion/">
-    <span class="idx">02 · picard</span>
-    <h3>Engineer Companion</h3>
-    <span class="m"><b>96/100</b> бенчмарк grounded-qa-100-v1</span>
-  </a><a class="work-item" href="../../case/geoconverter/">
-    <span class="idx">03 · lower-decks</span>
-    <h3>GeoConverter</h3>
-    <span class="m"><b>1e-12</b> допуск Нелдера–Мида</span>
-  </a><a class="work-item" href="../../case/hermes-viz/">
-    <span class="idx">04 · lower-decks</span>
-    <h3>Hermes Viz</h3>
-    <span class="m"><b>2 292</b> узла в графе знаний</span>
-  </a><a class="work-item" href="../../case/neuro-property/">
-    <span class="idx">05 · picard</span>
-    <h3>Neuro Property Trade</h3>
-    <span class="m"><b>161</b> тест движка зелёный</span>
-  </a><a class="work-item" href="../../case/penapivo/">
-    <span class="idx">06 · lower-decks-padd</span>
-    <h3>PenaPivo / BeerLog</h3>
-    <span class="m"><b>≥84%</b> покрытие ветвей, CI-гейт</span>
-  </a><a class="work-item" href="../../case/razgon-quiz/">
-    <span class="idx">07 · nemesis-blue</span>
-    <h3>Разгон Квиз</h3>
-    <span class="m"><b>320</b> тестов backend</span>
-  </a><a class="work-item" href="../../case/static-sites/">
-    <span class="idx">08 · classic</span>
-    <h3>Статические сайты</h3>
-    <span class="m"><b>0</b> сторонних библиотек</span>
-  </a><a class="work-item" href="../../case/storybeam/">
-    <span class="idx">09 · classic</span>
-    <h3>Storybeam</h3>
-    <span class="m"><b>56</b> коммитов</span>
-  </a><a class="work-item" href="../../case/streaming-prediction/">
-    <span class="idx">10 · picard</span>
-    <h3>Streaming stateful prediction</h3>
-    <span class="m"><b>4–5×</b> сигнал на полном окне</span>
-  </a><a class="work-item" href="../../case/swarm/">
-    <span class="idx">11 · nemesis-blue</span>
-    <h3>Swarm</h3>
-    <span class="m"><b>11/11</b> проверок зелёные</span>
-  </a><a class="work-item" href="../../case/trading-stand/">
-    <span class="idx">12 · lower-decks-padd</span>
-    <h3>Торговый исследовательский стенд</h3>
-    <span class="m"><b>PF 1.44</b> на 4h, 2 526 сделок</span>
-  </a><a class="work-item" href="../../case/vetka-dwg/">
-    <span class="idx">13 · voyager</span>
-    <h3>VETKA_DWG</h3>
-    <span class="m"><b>444/444</b> блока проходят 5 осей точности</span>
-  </a><a class="work-item" href="../../case/vtuber-rigger/">
-    <span class="idx">14 · classic</span>
-    <h3>VTuber Rigger</h3>
-    <span class="m"><b>54</b> узла в VRM-скелете</span>
+  <div class="main"><div class="doc">
+  <section class="page-head"><p class="kicker">СИСТЕМЫ · 14</p>
+    <h2>Все системы</h2><p class="lead">Три системы — три разных способа доказательства.</p></section>
+  <div class="work-grid"><a class="work-item" href="../../case/codebot/" style="--wa:#828cad;--wb:#ffbb33">
+    <span class="w-idx">01</span>
+    <span class="w-body">
+      <h3>Codebot</h3>
+      <span class="w-sub">voyager</span>
+    </span>
+    <span class="w-metric"><b>63</b><span>класса, без зависимостей</span></span>
+  </a><a class="work-item" href="../../case/engineer-companion/" style="--wa:#6d748c;--wb:#9ea5ba">
+    <span class="w-idx">02</span>
+    <span class="w-body">
+      <h3>Engineer Companion</h3>
+      <span class="w-sub">picard</span>
+    </span>
+    <span class="w-metric"><b>96/100</b><span>бенчмарк grounded-qa-100-v1</span></span>
+  </a><a class="work-item" href="../../case/geoconverter/" style="--wa:#ff7700;--wb:#ffcc99">
+    <span class="w-idx">03</span>
+    <span class="w-body">
+      <h3>GeoConverter</h3>
+      <span class="w-sub">lower-decks</span>
+    </span>
+    <span class="w-metric"><b>1e-12</b><span>допуск Нелдера–Мида</span></span>
+  </a><a class="work-item" href="../../case/hermes-viz/" style="--wa:#ff7700;--wb:#ffcc99">
+    <span class="w-idx">04</span>
+    <span class="w-body">
+      <h3>Hermes Viz</h3>
+      <span class="w-sub">lower-decks</span>
+    </span>
+    <span class="w-metric"><b>2 292</b><span>узла в графе знаний</span></span>
+  </a><a class="work-item" href="../../case/neuro-property/" style="--wa:#6d748c;--wb:#9ea5ba">
+    <span class="w-idx">05</span>
+    <span class="w-body">
+      <h3>Neuro Property Trade</h3>
+      <span class="w-sub">picard</span>
+    </span>
+    <span class="w-metric"><b>161</b><span>тест движка зелёный</span></span>
+  </a><a class="work-item" href="../../case/penapivo/" style="--wa:#5588ee;--wb:#88eeff">
+    <span class="w-idx">06</span>
+    <span class="w-body">
+      <h3>PenaPivo / BeerLog</h3>
+      <span class="w-sub">lower-decks-padd</span>
+    </span>
+    <span class="w-metric"><b>≥84%</b><span>покрытие ветвей, CI-гейт</span></span>
+  </a><a class="work-item" href="../../case/razgon-quiz/" style="--wa:#2266ff;--wb:#88bbff">
+    <span class="w-idx">07</span>
+    <span class="w-body">
+      <h3>Разгон Квиз</h3>
+      <span class="w-sub">nemesis-blue</span>
+    </span>
+    <span class="w-metric"><b>320</b><span>тестов backend</span></span>
+  </a><a class="work-item" href="../../case/static-sites/" style="--wa:#d29b7f;--wb:#eb943a">
+    <span class="w-idx">08</span>
+    <span class="w-body">
+      <h3>Статические сайты</h3>
+      <span class="w-sub">classic</span>
+    </span>
+    <span class="w-metric"><b>0</b><span>сторонних библиотек</span></span>
+  </a><a class="work-item" href="../../case/storybeam/" style="--wa:#d29b7f;--wb:#eb943a">
+    <span class="w-idx">09</span>
+    <span class="w-body">
+      <h3>Storybeam</h3>
+      <span class="w-sub">classic</span>
+    </span>
+    <span class="w-metric"><b>56</b><span>коммитов</span></span>
+  </a><a class="work-item" href="../../case/streaming-prediction/" style="--wa:#6d748c;--wb:#9ea5ba">
+    <span class="w-idx">10</span>
+    <span class="w-body">
+      <h3>Streaming stateful prediction</h3>
+      <span class="w-sub">picard</span>
+    </span>
+    <span class="w-metric"><b>4–5×</b><span>сигнал на полном окне</span></span>
+  </a><a class="work-item" href="../../case/swarm/" style="--wa:#2266ff;--wb:#88bbff">
+    <span class="w-idx">11</span>
+    <span class="w-body">
+      <h3>Swarm</h3>
+      <span class="w-sub">nemesis-blue</span>
+    </span>
+    <span class="w-metric"><b>11/11</b><span>проверок зелёные</span></span>
+  </a><a class="work-item" href="../../case/trading-stand/" style="--wa:#5588ee;--wb:#88eeff">
+    <span class="w-idx">12</span>
+    <span class="w-body">
+      <h3>Торговый исследовательский стенд</h3>
+      <span class="w-sub">lower-decks-padd</span>
+    </span>
+    <span class="w-metric"><b>PF 1.44</b><span>на 4h, 2 526 сделок</span></span>
+  </a><a class="work-item" href="../../case/vetka-dwg/" style="--wa:#828cad;--wb:#ffbb33">
+    <span class="w-idx">13</span>
+    <span class="w-body">
+      <h3>VETKA_DWG</h3>
+      <span class="w-sub">voyager</span>
+    </span>
+    <span class="w-metric"><b>444/444</b><span>блока проходят 5 осей точности</span></span>
+  </a><a class="work-item" href="../../case/vtuber-rigger/" style="--wa:#d29b7f;--wb:#eb943a">
+    <span class="w-idx">14</span>
+    <span class="w-body">
+      <h3>VTuber Rigger</h3>
+      <span class="w-sub">classic</span>
+    </span>
+    <span class="w-metric"><b>54</b><span>узла в VRM-скелете</span></span>
   </a></div></div></div>
 </div>
 </div>

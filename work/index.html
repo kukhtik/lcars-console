@@ -42,7 +42,8 @@
   </div>
 </aside>
 <div class="field">
-  <h1 class="banner"><span class="banner-title">WORK</span><span class="cursor" aria-hidden="true"></span><span class="code">03-111968</span></h1>
+  <h1 class="banner"><span class="banner-title">WORK</span><span class="cursor" aria-hidden="true"></span><span class="state-chip" id="state-chip">01</span><span class="code" id="banner-code">03-111968</span></h1>
+  <div class="progress" id="progress" aria-hidden="true"><i></i></div>
   <div class="spacer"></div>
   <div class="bars">
   <div class="barrow"><i class="bar b1"></i><i class="bar b2"></i><i class="bar b3"></i><i class="bar b4"></i><i class="bar b5"></i></div>
@@ -60,63 +61,107 @@
   </div>
   <div class="spacer"></div>
   <nav class="nav"><a href="../">01-HOME</a><a href="../work/" aria-current="page">02-WORK</a><a href="../about/">03-ABOUT</a><a href="../contact/">04-CONTACT</a></nav>
-  <div class="main"><div class="doc"><section><h2>All systems</h2><p class="lead">Three systems, three kinds of proof.</p></section>
-  <div class="work-grid"><a class="work-item" href="../case/codebot/">
-    <span class="idx">01 · voyager</span>
-    <h3>Codebot</h3>
-    <span class="m"><b>63</b> classes, no dependencies</span>
-  </a><a class="work-item" href="../case/engineer-companion/">
-    <span class="idx">02 · picard</span>
-    <h3>Engineer Companion</h3>
-    <span class="m"><b>96/100</b> grounded-qa-100-v1 benchmark</span>
-  </a><a class="work-item" href="../case/geoconverter/">
-    <span class="idx">03 · lower-decks</span>
-    <h3>GeoConverter</h3>
-    <span class="m"><b>1e-12</b> Nelder–Mead tolerance</span>
-  </a><a class="work-item" href="../case/hermes-viz/">
-    <span class="idx">04 · lower-decks</span>
-    <h3>Hermes Viz</h3>
-    <span class="m"><b>2 292</b> nodes in the knowledge graph</span>
-  </a><a class="work-item" href="../case/neuro-property/">
-    <span class="idx">05 · picard</span>
-    <h3>Neuro Property Trade</h3>
-    <span class="m"><b>161</b> engine tests green</span>
-  </a><a class="work-item" href="../case/penapivo/">
-    <span class="idx">06 · lower-decks-padd</span>
-    <h3>PenaPivo / BeerLog</h3>
-    <span class="m"><b>≥84%</b> branch coverage, CI gate</span>
-  </a><a class="work-item" href="../case/razgon-quiz/">
-    <span class="idx">07 · nemesis-blue</span>
-    <h3>Разгон Квиз</h3>
-    <span class="m"><b>320</b> backend tests</span>
-  </a><a class="work-item" href="../case/static-sites/">
-    <span class="idx">08 · classic</span>
-    <h3>Статические сайты</h3>
-    <span class="m"><b>0</b> third-party libraries</span>
-  </a><a class="work-item" href="../case/storybeam/">
-    <span class="idx">09 · classic</span>
-    <h3>Storybeam</h3>
-    <span class="m"><b>56</b> commits</span>
-  </a><a class="work-item" href="../case/streaming-prediction/">
-    <span class="idx">10 · picard</span>
-    <h3>Streaming stateful prediction</h3>
-    <span class="m"><b>4–5×</b> signal on the full window</span>
-  </a><a class="work-item" href="../case/swarm/">
-    <span class="idx">11 · nemesis-blue</span>
-    <h3>Swarm</h3>
-    <span class="m"><b>11/11</b> checks green</span>
-  </a><a class="work-item" href="../case/trading-stand/">
-    <span class="idx">12 · lower-decks-padd</span>
-    <h3>Торговый исследовательский стенд</h3>
-    <span class="m"><b>PF 1.44</b> on 4h, 2,526 trades</span>
-  </a><a class="work-item" href="../case/vetka-dwg/">
-    <span class="idx">13 · voyager</span>
-    <h3>VETKA_DWG</h3>
-    <span class="m"><b>444/444</b> blocks pass all five accuracy axes</span>
-  </a><a class="work-item" href="../case/vtuber-rigger/">
-    <span class="idx">14 · classic</span>
-    <h3>VTuber Rigger</h3>
-    <span class="m"><b>54</b> nodes in the VRM skeleton</span>
+  <div class="main"><div class="doc">
+  <section class="page-head"><p class="kicker">SYSTEMS · 14</p>
+    <h2>All systems</h2><p class="lead">Three systems, three kinds of proof.</p></section>
+  <div class="work-grid"><a class="work-item" href="../case/codebot/" style="--wa:#828cad;--wb:#ffbb33">
+    <span class="w-idx">01</span>
+    <span class="w-body">
+      <h3>Codebot</h3>
+      <span class="w-sub">voyager</span>
+    </span>
+    <span class="w-metric"><b>63</b><span>classes, no dependencies</span></span>
+  </a><a class="work-item" href="../case/engineer-companion/" style="--wa:#6d748c;--wb:#9ea5ba">
+    <span class="w-idx">02</span>
+    <span class="w-body">
+      <h3>Engineer Companion</h3>
+      <span class="w-sub">picard</span>
+    </span>
+    <span class="w-metric"><b>96/100</b><span>grounded-qa-100-v1 benchmark</span></span>
+  </a><a class="work-item" href="../case/geoconverter/" style="--wa:#ff7700;--wb:#ffcc99">
+    <span class="w-idx">03</span>
+    <span class="w-body">
+      <h3>GeoConverter</h3>
+      <span class="w-sub">lower-decks</span>
+    </span>
+    <span class="w-metric"><b>1e-12</b><span>Nelder–Mead tolerance</span></span>
+  </a><a class="work-item" href="../case/hermes-viz/" style="--wa:#ff7700;--wb:#ffcc99">
+    <span class="w-idx">04</span>
+    <span class="w-body">
+      <h3>Hermes Viz</h3>
+      <span class="w-sub">lower-decks</span>
+    </span>
+    <span class="w-metric"><b>2 292</b><span>nodes in the knowledge graph</span></span>
+  </a><a class="work-item" href="../case/neuro-property/" style="--wa:#6d748c;--wb:#9ea5ba">
+    <span class="w-idx">05</span>
+    <span class="w-body">
+      <h3>Neuro Property Trade</h3>
+      <span class="w-sub">picard</span>
+    </span>
+    <span class="w-metric"><b>161</b><span>engine tests green</span></span>
+  </a><a class="work-item" href="../case/penapivo/" style="--wa:#5588ee;--wb:#88eeff">
+    <span class="w-idx">06</span>
+    <span class="w-body">
+      <h3>PenaPivo / BeerLog</h3>
+      <span class="w-sub">lower-decks-padd</span>
+    </span>
+    <span class="w-metric"><b>≥84%</b><span>branch coverage, CI gate</span></span>
+  </a><a class="work-item" href="../case/razgon-quiz/" style="--wa:#2266ff;--wb:#88bbff">
+    <span class="w-idx">07</span>
+    <span class="w-body">
+      <h3>Разгон Квиз</h3>
+      <span class="w-sub">nemesis-blue</span>
+    </span>
+    <span class="w-metric"><b>320</b><span>backend tests</span></span>
+  </a><a class="work-item" href="../case/static-sites/" style="--wa:#d29b7f;--wb:#eb943a">
+    <span class="w-idx">08</span>
+    <span class="w-body">
+      <h3>Статические сайты</h3>
+      <span class="w-sub">classic</span>
+    </span>
+    <span class="w-metric"><b>0</b><span>third-party libraries</span></span>
+  </a><a class="work-item" href="../case/storybeam/" style="--wa:#d29b7f;--wb:#eb943a">
+    <span class="w-idx">09</span>
+    <span class="w-body">
+      <h3>Storybeam</h3>
+      <span class="w-sub">classic</span>
+    </span>
+    <span class="w-metric"><b>56</b><span>commits</span></span>
+  </a><a class="work-item" href="../case/streaming-prediction/" style="--wa:#6d748c;--wb:#9ea5ba">
+    <span class="w-idx">10</span>
+    <span class="w-body">
+      <h3>Streaming stateful prediction</h3>
+      <span class="w-sub">picard</span>
+    </span>
+    <span class="w-metric"><b>4–5×</b><span>signal on the full window</span></span>
+  </a><a class="work-item" href="../case/swarm/" style="--wa:#2266ff;--wb:#88bbff">
+    <span class="w-idx">11</span>
+    <span class="w-body">
+      <h3>Swarm</h3>
+      <span class="w-sub">nemesis-blue</span>
+    </span>
+    <span class="w-metric"><b>11/11</b><span>checks green</span></span>
+  </a><a class="work-item" href="../case/trading-stand/" style="--wa:#5588ee;--wb:#88eeff">
+    <span class="w-idx">12</span>
+    <span class="w-body">
+      <h3>Торговый исследовательский стенд</h3>
+      <span class="w-sub">lower-decks-padd</span>
+    </span>
+    <span class="w-metric"><b>PF 1.44</b><span>on 4h, 2,526 trades</span></span>
+  </a><a class="work-item" href="../case/vetka-dwg/" style="--wa:#828cad;--wb:#ffbb33">
+    <span class="w-idx">13</span>
+    <span class="w-body">
+      <h3>VETKA_DWG</h3>
+      <span class="w-sub">voyager</span>
+    </span>
+    <span class="w-metric"><b>444/444</b><span>blocks pass all five accuracy axes</span></span>
+  </a><a class="work-item" href="../case/vtuber-rigger/" style="--wa:#d29b7f;--wb:#eb943a">
+    <span class="w-idx">14</span>
+    <span class="w-body">
+      <h3>VTuber Rigger</h3>
+      <span class="w-sub">classic</span>
+    </span>
+    <span class="w-metric"><b>54</b><span>nodes in the VRM skeleton</span></span>
   </a></div></div></div>
 </div>
 </div>

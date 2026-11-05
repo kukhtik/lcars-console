@@ -75,6 +75,18 @@
       stars.push({ x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight,
                    z: 0.2 + Math.random() * 0.8, r: 0.3 + Math.random() * 1.1 });
     }
+    var meteor = null;
+    function drawMeteor() {
+      if (!meteor) return;
+      ctx.globalAlpha = meteor.life;
+      ctx.strokeStyle = "#cfd8ff";
+      ctx.lineWidth = 1.2;
+      ctx.beginPath();
+      ctx.moveTo(meteor.x, meteor.y);
+      ctx.lineTo(meteor.x + 90, meteor.y - 34);
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+    }
     function draw() {
       ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
       for (var k = 0; k < stars.length; k++) {
@@ -85,6 +97,7 @@
         ctx.arc(st.x, st.y, st.r, 0, 6.2832);
         ctx.fill();
       }
+      drawMeteor();
       ctx.globalAlpha = 1;
     }
     function step() {
@@ -94,8 +107,16 @@
         s.x -= 0.02 * s.z;
         if (s.x < -2) s.x = window.innerWidth + 2;
       }
+      if (!meteor && Math.random() < 0.0015) {
+        meteor = { x: window.innerWidth * (0.3 + Math.random() * 0.7), y: Math.random() * window.innerHeight * 0.6,
+                   life: 1 };
+      }
+      if (meteor) {
+        meteor.x -= 7; meteor.y += 2.6; meteor.life -= 0.012;
+        if (meteor.life <= 0) meteor = null;
+      }
       draw();
-      if (!reduce) requestAnimationFrame(step);
+      if (motion === "full") requestAnimationFrame(step);
     }
     window.__lcarsStars = {
       setMode: function (m) {
@@ -124,6 +145,20 @@
     document.querySelectorAll("[data-state-link]").forEach(function (a) {
       a.setAttribute("aria-current", String(Number(a.getAttribute("data-state-link")) === i));
     });
+    var chip = document.getElementById("state-chip");
+    if (chip) {
+      chip.textContent = ("0" + (i + 1)).slice(-2);
+      chip.classList.remove("flip");
+      void chip.offsetWidth;
+      chip.classList.add("flip");
+    }
+    var bars = document.querySelector(".bars");
+    if (bars && motion === "full") {
+      bars.classList.remove("is-pulsing");
+      void bars.offsetWidth;
+      bars.classList.add("is-pulsing");
+      setTimeout(function () { bars.classList.remove("is-pulsing"); }, 1100);
+    }
   }
   if (states.length) setState(0);
   var trackEl = document.querySelector(".track");
@@ -143,6 +178,34 @@
       if (steps[i]) { ev.preventDefault(); steps[i].scrollIntoView({ behavior: motion === "full" ? "smooth" : "auto", block: "start" }); }
     });
   });
+  var progressBar = document.querySelector("#progress i");
+  var ticking = false;
+  function paintProgress() {
+    if (!progressBar) return;
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var ratio = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+    progressBar.style.width = (ratio * 100).toFixed(2) + "%";
+    ticking = false;
+  }
+  window.addEventListener("scroll", function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(paintProgress); }
+  }, { passive: true });
+  paintProgress();
+
+  var codeEl = document.getElementById("banner-code");
+  if (codeEl) {
+    var codes = [codeEl.textContent, "02-262011", "02-262033"];
+    var ci = 0;
+    setInterval(function () {
+      if (motion !== "full") return;
+      ci = (ci + 1) % codes.length;
+      codeEl.textContent = codes[ci];
+      codeEl.classList.remove("is-typing");
+      void codeEl.offsetWidth;
+      codeEl.classList.add("is-typing");
+    }, 6000);
+  }
+
   document.addEventListener("keydown", function (e) {
     if (!states.length) return;
     if (e.key === "ArrowDown" || e.key === "PageDown") {
