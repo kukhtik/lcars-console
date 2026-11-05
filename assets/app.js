@@ -2,7 +2,27 @@
 (function () {
   "use strict";
   var html = document.documentElement;
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var mqReduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var storedMotion = null;
+  try { storedMotion = localStorage.getItem("lcars-motion"); } catch (e) {}
+  var motion = storedMotion || (mqReduce.matches ? "reduced" : "full");
+
+  function applyMotion(m) {
+    motion = m;
+    html.setAttribute("data-motion", m);
+    try { localStorage.setItem("lcars-motion", m); } catch (e) {}
+    var btn = document.getElementById("motion-toggle");
+    if (btn) btn.textContent = "MOTION · " + (m === "full" ? "FULL" : m === "reduced" ? "REDUCED" : "OFF");
+    if (window.__lcarsStars) window.__lcarsStars.setMode(m);
+  }
+  applyMotion(motion);
+
+  var motionBtn = document.getElementById("motion-toggle");
+  if (motionBtn) {
+    motionBtn.addEventListener("click", function () {
+      applyMotion(motion === "full" ? "off" : "full");
+    });
+  }
 
   /* тема */
   var saved = null;
@@ -68,6 +88,7 @@
       ctx.globalAlpha = 1;
     }
     function step() {
+      if (motion !== "full") return;
       for (var k = 0; k < stars.length; k++) {
         var s = stars[k];
         s.x -= 0.02 * s.z;
@@ -76,7 +97,16 @@
       draw();
       if (!reduce) requestAnimationFrame(step);
     }
-    if (reduce) draw(); else requestAnimationFrame(step);
+    window.__lcarsStars = {
+      setMode: function (m) {
+        if (m === "off") { ctx.clearRect(0, 0, window.innerWidth, window.innerHeight); }
+        else if (m === "reduced") { draw(); }
+        else { requestAnimationFrame(step); }
+      }
+    };
+    if (motion === "off") { ctx.clearRect(0, 0, window.innerWidth, window.innerHeight); }
+    else if (motion === "reduced") { draw(); }
+    else { requestAnimationFrame(step); }
   }
 
   /* состояния главной */
@@ -87,6 +117,10 @@
     if (i === current && states[i] && states[i].classList.contains("is-on")) return;
     current = i;
     states.forEach(function (el, k) { el.classList.toggle("is-on", k === i); });
+    var num = document.getElementById("state-num");
+    if (num) num.textContent = ("0" + (i + 1)).slice(-2) + " / " + ("0" + states.length).slice(-2);
+    var ticks = document.querySelectorAll("#state-ticks i");
+    for (var k = 0; k < ticks.length; k++) ticks[k].classList.toggle("is-on", k <= i);
     document.querySelectorAll("[data-state-link]").forEach(function (a) {
       a.setAttribute("aria-current", String(Number(a.getAttribute("data-state-link")) === i));
     });
