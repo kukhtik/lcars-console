@@ -919,3 +919,21 @@ html[data-motion="reduced"] .main { animation: none; }
   .track .step { scroll-snap-align: start; }
   .track .step { scroll-snap-stop: always; }
 }
+
+/* «лепестки»: старый векторный мотив как водяной знак в блоке STATE */
+.statepanel { position: relative; overflow: hidden; }
+.statepanel > *:not(.sp-belt) { position: relative; z-index: 1; }
+.sp-belt {
+  position: absolute;
+  right: -6px;
+  bottom: -6px;
+  width: 262px;
+  height: 90px;
+  color: #000;
+  opacity: .22;
+  pointer-events: none;
+}
+.belt-leaves { animation: belt-breath 5200ms ease-in-out infinite; }
+@keyframes belt-breath { 0%, 100% { opacity: .45; } 55% { opacity: 1; } }
+[data-motion="reduced"] .belt-leaves { animation: none; opacity: .7; }
+[data-motion="off"] .belt-leaves { animation: none; opacity: .8; }
