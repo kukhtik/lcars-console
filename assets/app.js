@@ -180,7 +180,7 @@
   });
   var mlc = document.querySelector(".mlc-assembly");
   if (mlc) {
-    var mlcLeaves = mlc.querySelectorAll(".mlc-leaf");
+    var mlcLeaves = mlc.querySelectorAll(".mlc-bank use");
     var INNER = +mlc.dataset.inner, LW = +mlc.dataset.lw, GAP = +mlc.dataset.gap,
         CY = +mlc.dataset.cy, OPEN = +mlc.dataset.open, MIN = +mlc.dataset.min, PAIRS = +mlc.dataset.pairs;
     var mlcTick = false;
@@ -188,6 +188,8 @@
       var max = document.documentElement.scrollHeight - window.innerHeight;
       var p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
       mlc.style.setProperty("--amp", String(1 - p));
+      var pct = document.getElementById("scroll-pct");
+      if (pct) pct.textContent = Math.round(p * 100) + "%";
       for (var k = 0; k < mlcLeaves.length; k++) {
         var r = mlcLeaves[k];
         var i = Math.round((parseFloat(r.getAttribute("x")) - INNER) / (LW + GAP));
