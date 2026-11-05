@@ -937,3 +937,36 @@ html[data-motion="reduced"] .main { animation: none; }
 @keyframes belt-breath { 0%, 100% { opacity: .45; } 55% { opacity: 1; } }
 [data-motion="reduced"] .belt-leaves { animation: none; opacity: .7; }
 [data-motion="off"] .belt-leaves { animation: none; opacity: .8; }
+
+/* ===== MLC: сборка коллиматора в блоке STATE ===== */
+.statepanel {
+  grid-template-columns: 206px minmax(0, 1fr);
+  grid-template-rows: 1fr;
+  padding: 0;
+  gap: 0;
+  align-items: stretch;
+}
+.sp-info {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 0 8px 12px;
+  min-width: 0;
+}
+.sp-info .sp-num { justify-self: start; }
+.sp-info .ticks { grid-column: auto; }
+.mlcbox { position: relative; border-left: 4px solid #000; overflow: hidden; min-width: 0; }
+.mlcbox svg { display: block; width: 100%; height: 100%; }
+.mlc-leaf { fill: #000; }
+.mlc-housing { fill: #000; }
+.mlc-stroke { fill: none; stroke: #000; }
+.mlc-axis { stroke: #000; stroke-width: .9; stroke-dasharray: 3 4; opacity: .4; }
+
+@keyframes mlc-up { from { transform: translateY(0); } to { transform: translateY(calc(var(--amp, 1) * 15px)); } }
+@keyframes mlc-dn { from { transform: translateY(0); } to { transform: translateY(calc(var(--amp, 1) * -15px)); } }
+.mlc-bank--up { animation: mlc-up 8000ms cubic-bezier(.45, 0, .55, 1) infinite alternate; }
+.mlc-bank--dn { animation: mlc-dn 8000ms cubic-bezier(.45, 0, .55, 1) infinite alternate; }
+[data-motion="reduced"] .mlc-bank,
+[data-motion="off"] .mlc-bank { animation: none; }
+[data-motion="off"] .mlc-leaf { transform: none; }

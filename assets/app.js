@@ -178,6 +178,31 @@
       if (steps[i]) { ev.preventDefault(); steps[i].scrollIntoView({ behavior: motion === "full" ? "smooth" : "auto", block: "start" }); }
     });
   });
+  var mlc = document.querySelector(".mlc-assembly");
+  if (mlc) {
+    var mlcLeaves = mlc.querySelectorAll(".mlc-leaf");
+    var INNER = +mlc.dataset.inner, LW = +mlc.dataset.lw, GAP = +mlc.dataset.gap,
+        CY = +mlc.dataset.cy, OPEN = +mlc.dataset.open, MIN = +mlc.dataset.min, PAIRS = +mlc.dataset.pairs;
+    var mlcTick = false;
+    var paintMlc = function () {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      var p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+      mlc.style.setProperty("--amp", String(1 - p));
+      for (var k = 0; k < mlcLeaves.length; k++) {
+        var r = mlcLeaves[k];
+        var i = Math.round((parseFloat(r.getAttribute("x")) - INNER) / (LW + GAP));
+        var local = Math.max(0, Math.min(1, p * PAIRS - i));
+        var isUp = parseFloat(r.getAttribute("y")) < CY;
+        r.setAttribute("transform", "translate(0 " + ((OPEN - MIN) * local * (isUp ? 1 : -1)).toFixed(2) + ")");
+      }
+      mlcTick = false;
+    };
+    window.addEventListener("scroll", function () {
+      if (!mlcTick) { mlcTick = true; requestAnimationFrame(paintMlc); }
+    }, { passive: true });
+    paintMlc();
+  }
+
   var progressBar = document.querySelector("#progress i");
   var ticking = false;
   function paintProgress() {
